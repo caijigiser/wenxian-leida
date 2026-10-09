@@ -2,8 +2,8 @@
 
 ## 1. 安装
 
-把 `wenxian-leida/` 整个文件夹放到 `~/.claude/skills/`（Windows: `C:\Users\<你>\.claude\skills\`），重启 Claude Code。
-slash 命令（可选）：把 `radar.md / radar-a.md / radar-b.md / radar-c.md` 放到 `~/.claude/commands/`。
+把 `wenxian-leida/` 整个文件夹放到 `~/.claude/skills/`（Windows: `C:\Users\<你>\.claude\skills\`），或 `git clone` 本仓库到该位置，重启 Claude Code。
+slash 命令（可选）：把仓库 `commands/` 目录里的 `radar.md / radar-a.md / radar-b.md / radar-c.md` 复制到 `~/.claude/commands/`。
 
 ## 2. 依赖
 
@@ -13,7 +13,18 @@ slash 命令（可选）：把 `radar.md / radar-a.md / radar-b.md / radar-c.md`
 
 ## 3. 三步配置
 
-1. **填 OpenAlex 邮箱**（重要，否则易被 429 限流）：编辑 `config/domains.json` → `settings.openalex_email` 填你的真实邮箱（OpenAlex 不校验、不发信，仅用于限速分级）。
+1. **新建 `config/local.json`**（个人配置，已被 .gitignore 排除，不会误传 git）：
+   ```json
+   {
+     "openalex_email": "你的邮箱@example.com",
+     "staging_pdf_dir": "C:/Users/<你>/Documents/wenxian-leida/pdfs",
+     "output_dir": "C:/Users/<你>/Documents/wenxian-leida/runs",
+     "triage_md_dir": "C:/Users/<你>/Documents/wenxian-leida/triage"
+   }
+   ```
+   - `openalex_email` 重要（OpenAlex polite pool，否则易被 429 限流；不校验、不发信，仅用于限速分级）
+   - `triage_md_dir` 建议指到你 Obsidian vault 里的笔记目录
+   - 这些值会覆盖 `domains.json` 里的占位默认值
 2. **建分类**：在 Zotero 里手动建 3 个分类（名字须与 config 里 `domains.X.collection` 一致）：
    - 文献雷达-A 冻土路基稳定性
    - 文献雷达-B 遥感LiDAR形变监测

@@ -13,7 +13,7 @@
 
 适合云端同步正常、想全自动建分类+分流的用户。⚠️ 前提：Zotero 免费云存储仅 300MB，**存储满会导致同步停摆、云端写入到不了本地**（本机实测踩过此坑）。本地授权 key（`/api/local/authorize`）秒级过期，批量写不可用，勿走那条路。
 
-- **一次性设置**：`zotero.org/settings/keys` 建 private key（勾 Allow library access + **Read/Write**）→ 存 `config/zotero_webkey.txt`；`config/domains.json` 的 `settings.zotero.user_id` 填数字 userID（本机 `13328976`）。
+- **一次性设置**：`zotero.org/settings/keys` 建 private key（勾 Allow library access + **Read/Write**）→ 存 `config/zotero_webkey.txt`；`settings.zotero.user_id` 填你自己的数字 userID（同页面可见；建议写在 `config/local.json`，不进 git）。
 - **请求头**：`Zotero-API-Key: <key>`、`Zotero-API-Version: 3`；写操作加 `If-Unmodified-Since-Version: <库版本>`（从任意 GET 的 `Last-Modified-Version` 头拿，每次写后递增）。
 - **端点**：`/users/{id}/items`、`/users/{id}/collections`。
 - **建条目**：`POST /users/{id}/items`，body 用索引对象 `{"0":{itemdata},"1":{...}}`；响应 `{"successful":{"0":{"key","version"}},"failed":{}}`。

@@ -4,7 +4,8 @@
 Web API key 持久不过期, 是 pyzotero 等工具的标准做法。
 
 需要: config/zotero_webkey.txt 里存 Web API key(Read/Write 权限);
-      config/domains.json 的 settings.zotero.user_id (默认 13328976)。
+      settings.zotero.user_id 填自己的数字 userID(建议放 config/local.json,
+      该文件不进 git; userID 在 zotero.org/settings/keys 页面可见)。
 """
 from __future__ import annotations
 import json
@@ -35,7 +36,7 @@ def load_webkey() -> str:
 
 def get_user_id() -> str:
     cfg = load_config()
-    return str(cfg["settings"]["zotero"].get("user_id", "13328976"))
+    return str(cfg["settings"]["zotero"].get("user_id", ""))
 
 
 class ZoteroWeb:

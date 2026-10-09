@@ -75,8 +75,8 @@
       "local_api": "http://127.0.0.1:23119",
       "collection_name": "文献雷达-Inbox"
     },
-    "staging_pdf_dir": "C:/Users/hanquYQR/Documents/wenxian-leida/pdfs",
-    "output_dir": "C:/Users/hanquYQR/Documents/wenxian-leida/runs",
-    "triage_md_dir": "C:/Users/hanquYQR/Documents/Obsidian/research-vault/Research/permafrost-road/Sources/Triage"
+    "staging_pdf_dir": "C:/Users/<你的用户名>/Documents/wenxian-leida/pdfs",
+    "output_dir": "C:/Users/<你的用户名>/Documents/wenxian-leida/runs",
+    "triage_md_dir": "C:/Users/<你的用户名>/Documents/wenxian-leida/triage"
   }
 }
