@@ -1,0 +1,82 @@
+{
+  "_comment": "文献雷达 wenxian-leida 配置。编辑 domains 里的关键词即可扩展研究方向。openalex_queries 是实际下发检索的语句；keywords_zh / cnki_query 用于生成中文库检索式。",
+  "domains": {
+    "A": {
+      "name_zh": "冻土区路基稳定性",
+      "name_en": "Permafrost roadbed/subgrade stability",
+      "collection": "文献雷达-A 冻土路基稳定性",
+      "openalex_queries": [
+        "permafrost subgrade stability Qinghai-Tibet",
+        "permafrost roadbed thermal stability",
+        "thaw settlement permafrost embankment",
+        "freeze-thaw permafrost roadbed deformation",
+        "climate warming permafrost engineering active layer",
+        "permafrost highway subgrade disease cooling measure",
+        "冻土 路基 稳定性 青藏高原",
+        "多年冻土 热融沉降 路基 变形"
+      ],
+      "keywords_en": ["permafrost", "subgrade stability", "roadbed", "Qinghai-Tibet Plateau", "thaw settlement", "thermokarst", "freeze-thaw", "thermal regime", "embankment deformation", "active layer", "climate warming", "crushed-rock embankment"],
+      "keywords_zh": ["冻土", "路基稳定性", "青藏高原", "热融沉降", "冻融循环", "热状况", "活动层", "变形", "公路路基", "多年冻土", "冷却路基"],
+      "cnki_query": "(SU='冻土' OR SU='多年冻土') AND (SU='路基' OR SU='公路') AND (SU='稳定性' OR SU='沉降' OR SU='变形' OR SU='冻融') AND (SU='青藏高原' OR SU='青藏公路' OR SU='G109')",
+      "wanfang_query": "主题:(冻土 OR 多年冻土) AND 主题:(路基 OR 公路) AND 主题:(稳定性 OR 沉降 OR 变形 OR 冻融)"
+    },
+    "B": {
+      "name_zh": "遥感/LiDAR 形变监测与沉降参数提取",
+      "name_en": "Remote sensing / LiDAR deformation monitoring & settlement extraction",
+      "collection": "文献雷达-B 遥感LiDAR形变监测",
+      "openalex_queries": [
+        "LiDAR point cloud road subgrade settlement deformation extraction",
+        "InSAR time series surface deformation highway railway embankment permafrost",
+        "PS-InSAR ground subsidence subgrade embankment deformation monitoring",
+        "MT-InSAR deformation Qinghai-Tibet railway permafrost subgrade",
+        "DEM elevation change detection road embankment settlement quantification",
+        "airborne LiDAR terrain change detection highway subgrade deformation",
+        "terrestrial laser scanning pavement subgrade deformation monitoring",
+        "InSAR 形变监测 公路 路基 冻土",
+        "激光雷达 点云 沉降 公路 监测"
+      ],
+      "keywords_en": ["LiDAR", "point cloud", "DEM", "road settlement", "deformation extraction", "change detection", "InSAR", "PS-InSAR", "MT-InSAR", "surface deformation", "Sentinel-1", "slope aspect", "ground subsidence", "ArcPy"],
+      "keywords_zh": ["激光雷达", "点云", "高程变化", "形变提取", "沉降监测", "雷达干涉", "时序形变", "坡度坡向", "DEM", "地表形变"],
+      "cnki_query": "(SU='激光雷达' OR SU='LiDAR' OR SU='点云' OR SU='InSAR' OR SU='雷达干涉') AND (SU='沉降' OR SU='形变' OR SU='变形' OR SU='高程变化') AND (SU='公路' OR SU='路基' OR SU='监测')",
+      "wanfang_query": "主题:(激光雷达 OR LiDAR OR 点云 OR InSAR) AND 主题:(沉降 OR 形变 OR 变形) AND 主题:(公路 OR 路基 OR 监测)"
+    },
+    "C": {
+      "name_zh": "冻土工程风险评估与机器学习建模",
+      "name_en": "Permafrost engineering risk assessment & machine-learning modeling",
+      "collection": "文献雷达-C 冻土风险与机器学习",
+      "openalex_queries": [
+        "permafrost engineering risk assessment machine learning",
+        "thaw susceptibility mapping machine learning",
+        "permafrost degradation prediction numerical simulation",
+        "roadbed deformation prediction deep learning remote sensing",
+        "hazard susceptibility Qinghai-Tibet permafrost model",
+        "climate change permafrost infrastructure risk projection",
+        "冻土 易发性 机器学习 评价",
+        "多年冻土 风险评价 青藏高原 工程"
+      ],
+      "keywords_en": ["permafrost", "risk assessment", "machine learning", "susceptibility mapping", "numerical simulation", "deformation prediction", "deep learning", "hazard", "climate projection", "infrastructure risk"],
+      "keywords_zh": ["冻土", "风险评估", "机器学习", "易发性", "数值模拟", "变形预测", "深度学习", "危险性", "气候预估"],
+      "cnki_query": "(SU='冻土' OR SU='多年冻土') AND (SU='风险' OR SU='易发性' OR SU='危险性' OR SU='评价') AND (SU='机器学习' OR SU='深度学习' OR SU='数值模拟' OR SU='预测')",
+      "wanfang_query": "主题:(冻土 OR 多年冻土) AND 主题:(风险 OR 易发性 OR 评价) AND 主题:(机器学习 OR 深度学习 OR 数值模拟 OR 预测)"
+    }
+  },
+  "settings": {
+    "since_year": 2016,
+    "max_per_query": 25,
+    "openalex_email": "",
+    "query_delay_sec": 1.0,
+    "venue_blocklist": ["城市建筑与发展", "现代工程项目管理", "工程技术与创新", "建筑技术研究", "工程管理与技术探讨", "工程学研究与实用", "现代交通与路桥建设", "工程技术研究", "工程建设", "建筑工程"],
+    "title_blocklist": ["浅谈", "刍议", "探究"],
+    "s2_enabled": false,
+    "s2_api_key": "",
+    "zotero": {
+      "mode": "connector",
+      "user_id": "",
+      "local_api": "http://127.0.0.1:23119",
+      "collection_name": "文献雷达-Inbox"
+    },
+    "staging_pdf_dir": "C:/Users/hanquYQR/Documents/wenxian-leida/pdfs",
+    "output_dir": "C:/Users/hanquYQR/Documents/wenxian-leida/runs",
+    "triage_md_dir": "C:/Users/hanquYQR/Documents/Obsidian/research-vault/Research/permafrost-road/Sources/Triage"
+  }
+}
